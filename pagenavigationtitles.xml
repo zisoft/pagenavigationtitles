@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.6" type="plugin" group="content">
+	<name>plg_content_pagenavigationtitles</name>
+	<author>Mario Zimmermann</author>
+	<creationDate>November 2011</creationDate>
+	<copyright>Copyright (C) 2005 - 2010 Open Source Matters. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>mail@zisoft.de</authorEmail>
+	<authorUrl>www.zisoft.de</authorUrl>
+	<version>1.3</version>
+	<description>PLG_PAGENAVIGATIONTITLES_XML_DESCRIPTION</description>
+	
+	<files>
+		<filename plugin="pagenavigationtitles">pagenavigationtitles.php</filename>
+		<filename>index.html</filename>
+	</files>
+    
+	<languages>
+		<language tag="en-GB">en-GB.plg_content_pagenavigationtitles.sys.ini</language>
+		<language tag="en-GB">en-GB.plg_content_pagenavigationtitles.ini</language>
+		<language tag="de-DE">de-DE.plg_content_pagenavigationtitles.sys.ini</language>
+		<language tag="de-DE">de-DE.plg_content_pagenavigationtitles.ini</language>
+	</languages>
+    
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="position" type="list" default="1" label="PLG_PAGENAVIGATIONTITLES_FIELD_POSITION" description="PLG_PAGENAVIGATIONTITLES_FIELD_POSITION_DESC">
+                    <option value="1">PLG_PAGENAVIGATIONTITLES_FIELD_POSITION_VALUE_BELOW</option>
+                    <option value="0">PLG_PAGENAVIGATIONTITLES_FIELD_POSITION_VALUE_ABOVE</option>
+                    <option value="2">PLG_PAGENAVIGATIONTITLES_FIELD_POSITION_VALUE_ABOVEBELOW</option>
+                </field>
+                <field name="text_arrows" type="list" default="1" label="PLG_PAGENAVIGATIONTITLES_FIELD_ARROWS" description="PLG_PAGENAVIGATIONTITLES_FIELD_ARROWS_DESC">
+                    <option value="1">PLG_PAGENAVIGATIONTITLES_FIELD_ARROWS_VALUE_YES</option>
+                    <option value="0">PLG_PAGENAVIGATIONTITLES_FIELD_ARROWS_VALUE_NO</option>
+                </field>
+                <field name="pre_text" type="text" default="" label="PLG_PAGENAVIGATIONTITLES_FIELD_PRETEXT" description="PLG_PAGENAVIGATIONTITLES_FIELD_PRETEXT_DESC" />
+            </fieldset>
+        </fields>
+    </config>
+</extension>
