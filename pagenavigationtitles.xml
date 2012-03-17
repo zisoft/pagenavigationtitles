@@ -2,14 +2,18 @@
 <extension version="1.6" type="plugin" group="content">
 	<name>plg_content_pagenavigationtitles</name>
 	<author>Mario Zimmermann</author>
-	<creationDate>November 2011</creationDate>
+	<creationDate>March 2012</creationDate>
 	<copyright>Copyright (C) 2005 - 2010 Open Source Matters. All rights reserved.</copyright>
 	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
 	<authorEmail>mail@zisoft.de</authorEmail>
 	<authorUrl>www.zisoft.de</authorUrl>
-	<version>1.3</version>
+	<version>1.4</version>
 	<description>PLG_PAGENAVIGATIONTITLES_XML_DESCRIPTION</description>
 	
+	<updateservers>
+		<server type="extension" name="zisoft.de Updates">http://www.zisoft.de/downloads/Software/Updates/pagenavigationtitles_update.xml</server>
+	</updateservers>
+
 	<files>
 		<filename plugin="pagenavigationtitles">pagenavigationtitles.php</filename>
 		<filename>index.html</filename>
@@ -34,7 +38,8 @@
                     <option value="1">PLG_PAGENAVIGATIONTITLES_FIELD_ARROWS_VALUE_YES</option>
                     <option value="0">PLG_PAGENAVIGATIONTITLES_FIELD_ARROWS_VALUE_NO</option>
                 </field>
-                <field name="pre_text" type="text" default="" label="PLG_PAGENAVIGATIONTITLES_FIELD_PRETEXT" description="PLG_PAGENAVIGATIONTITLES_FIELD_PRETEXT_DESC" />
+                <field name="pre_text_prev" type="text" default="" label="PLG_PAGENAVIGATIONTITLES_FIELD_PRETEXT_PREV" description="PLG_PAGENAVIGATIONTITLES_FIELD_PRETEXT_PREV_DESC" />
+                <field name="pre_text_next" type="text" default="" label="PLG_PAGENAVIGATIONTITLES_FIELD_PRETEXT_NEXT" description="PLG_PAGENAVIGATIONTITLES_FIELD_PRETEXT_NEXT_DESC" />
             </fieldset>
         </fields>
     </config>

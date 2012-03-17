@@ -1,7 +1,7 @@
 <?php
 /**
-* @version		1.3
-* @copyright	Copyright (C) 2011 Mario Zimmermann. All rights reserved.
+* @version		1.4
+* @copyright	Copyright (C) 2011,2012 Mario Zimmermann. All rights reserved.
 * @license		GNU/GPL, see LICENSE.php
 * Joomla! is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -165,9 +165,10 @@ class plgContentPageNavigationTitles extends JPlugin
 			
 			
 			// Get the plugin parameters
-			$position    = $this->params->get('position', 1);
-			$text_arrows = $this->params->get('text_arrows', 1);
-			$pre_text    = $this->params->get('pre_text', '');
+			$position      = $this->params->get('position', 1);
+			$text_arrows   = $this->params->get('text_arrows', 1);
+			$pre_text_prev = $this->params->get('pre_text_prev', '');
+			$pre_text_next = $this->params->get('pre_text_next', '');
 			
 			$arrow_left = '';
 			$arrow_right = '';
@@ -187,23 +188,23 @@ class plgContentPageNavigationTitles extends JPlugin
 				if ($row->prev)
 				{
 					$html .= '
-					<li class="pagenav-prev">'
-					;
-					if ($pre_text)
+					<li class="pagenav-prev">' . $arrow_left;
+					if ($pre_text_prev)
 					{
-						$html .= '<span class="pagenav-prev-pretext">' . $pre_text . '</span>';
+						$html .= '<span class="pagenav-prev-pretext">' . $pre_text_prev . '</span>';
 					}
-					$html .= '<a href="'. $row->prev .'" rel="next">' . $arrow_left . $prev_title . '</a></li>';
+					$html .= '<a href="'. $row->prev .'" rel="next">' . $prev_title . '</a></li>';
 				}
 
 				if ($row->next)
 				{
 					$html .= '<li class="pagenav-next">';
-					if ($pre_text)
+					if ($pre_text_next)
 					{
-						$html .= '<span class="pagenav-next-pretext">'. $pre_text . '</span>';
+						$html .= '<span class="pagenav-next-pretext">'. $pre_text_next . '</span>';
 					}
-					$html .= '<a href="'. $row->next .'" rel="prev">' . $next_title . $arrow_right . '</a></li>';
+					$html .= '<a href="'. $row->next .'" rel="prev">' . $next_title . '</a>';
+					$html .= $arrow_right . '</li>';
 				}
 				$html .= '
 				</ul>'
