@@ -14,9 +14,9 @@ corresponding articles.
 Plugin Parameters
 -----------------
 
-Turn on/off the left and right arrows (<,>)
-Position of the navigation bar can be set to above, below or both
-Configurable texts in front of the links
+* Turn on/off the left and right arrows (<,>)
+* Position of the navigation bar can be set to above, below or both
+* Configurable texts in front of the links
 
 
 HTML Markup And css Styling
