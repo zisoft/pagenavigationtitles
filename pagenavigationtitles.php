@@ -20,7 +20,7 @@ class plgContentPageNavigationTitles extends JPlugin
 
     public function onContentBeforeDisplay($context, &$row, &$params, $page=0)
 	{
-		$view = JRequest::getCmd('view');
+		$view  = JRequest::getCmd('view');
 		$print = JRequest::getBool('print');
 
 		if ($print) {
@@ -29,19 +29,19 @@ class plgContentPageNavigationTitles extends JPlugin
 
 		if ($params->get('show_item_navigation') && ($context == 'com_content.article') && ($view == 'article'))
 		{
-			$html = '';
-			$db		= JFactory::getDbo();
-			$user	= JFactory::getUser();
-			$app	= JFactory::getApplication();
-			$lang	= JFactory::getLanguage();
+			$html     = '';
+			$db       = JFactory::getDbo();
+			$user     = JFactory::getUser();
+			$app      = JFactory::getApplication();
+			$lang     = JFactory::getLanguage();
 			$nullDate = $db->getNullDate();
 
-			$date	= JFactory::getDate();
-			$config	= JFactory::getConfig();
-			$now	= $date->toSql();
+			$date   = JFactory::getDate();
+			$config = JFactory::getConfig();
+			$now    = $date->toSql();
 
-			$uid	= $row->id;
-			$option	= 'com_content';
+			$uid        = $row->id;
+			$option     = 'com_content';
 			$canPublish = $user->authorise('core.edit.state', $option.'.article.'.$row->id);
 
 			// The following is needed as different menu items types utilise a different param to control ordering.
@@ -128,8 +128,8 @@ class plgContentPageNavigationTitles extends JPlugin
 
 			$rows = array_values($list);
             
-			$row->prev = null;
-			$row->next = null;
+			$row->prev  = null;
+			$row->next  = null;
 			$prev_title = null;
 			$next_title = null;
 
@@ -175,7 +175,7 @@ class plgContentPageNavigationTitles extends JPlugin
 			$pretext_prev_class = $this->params->get('pretextprevclass');
 			$pretext_next_class = $this->params->get('pretextnextclass');
 			
-			$arrow_left = '';
+			$arrow_left  = '';
 			$arrow_right = '';
 			
 			if ($text_arrows)
