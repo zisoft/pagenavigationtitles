@@ -1,7 +1,7 @@
 <?php
 /**
-* @version		1.4
-* @copyright	Copyright (C) 2011,2012 Mario Zimmermann. All rights reserved.
+* @version		1.6
+* @copyright	Copyright (C) 2011,2013 Mario Zimmermann. All rights reserved.
 * @license		GNU/GPL, see LICENSE.php
 * Joomla! is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -38,7 +38,7 @@ class plgContentPageNavigationTitles extends JPlugin
 
 			$date	= JFactory::getDate();
 			$config	= JFactory::getConfig();
-			$now	= $date->toMySQL();
+			$now	= $date->toSql();
 
 			$uid	= $row->id;
 			$option	= 'com_content';
@@ -165,10 +165,15 @@ class plgContentPageNavigationTitles extends JPlugin
 			
 			
 			// Get the plugin parameters
-			$position      = $this->params->get('position', 1);
-			$text_arrows   = $this->params->get('text_arrows', 1);
-			$pre_text_prev = $this->params->get('pre_text_prev', '');
-			$pre_text_next = $this->params->get('pre_text_next', '');
+			$position           = $this->params->get('position', 1);
+			$text_arrows        = $this->params->get('text_arrows', 1);
+			$pre_text_prev      = $this->params->get('pre_text_prev', '');
+			$pre_text_next      = $this->params->get('pre_text_next', '');
+			$base_class         = $this->params->get('baseclass');
+			$prev_class         = $this->params->get('prevclass');
+			$next_class         = $this->params->get('nextclass');
+			$pretext_prev_class = $this->params->get('pretextprevclass');
+			$pretext_next_class = $this->params->get('pretextnextclass');
 			
 			$arrow_left = '';
 			$arrow_right = '';
@@ -182,26 +187,46 @@ class plgContentPageNavigationTitles extends JPlugin
 			// output
 			if ($row->prev || $row->next)
 			{
-				$html = '
-				<ul class="pagenav">'
-				;
+				$html = '<ul';
+				if ($base_class) {
+					$html .= ' class="' . $base_class . '"';
+				}
+				$html .= '>';
+
 				if ($row->prev)
 				{
-					$html .= '
-					<li class="pagenav-prev">' . $arrow_left;
+					$html .= '<li';
+					if ($prev_class) {
+						$html .= ' class="' . $prev_class . '"';
+					}
+					$html .= '>' . $arrow_left;
+
 					if ($pre_text_prev)
 					{
-						$html .= '<span class="pagenav-prev-pretext">' . $pre_text_prev . '</span>';
+						$html .= '<span';
+						if ($pretext_prev_class) {
+							$html .= ' class="' . $pretext_prev_class . '"';
+						}
+						$html .= '>' . $pre_text_prev . '</span>';
 					}
 					$html .= '<a href="'. $row->prev .'" rel="next">' . $prev_title . '</a></li>';
 				}
 
 				if ($row->next)
 				{
-					$html .= '<li class="pagenav-next">';
+					$html .= '<li';
+					if ($next_class) {
+						$html .= ' class="' . $next_class . '"';
+					}
+					$html .= '>';
+
 					if ($pre_text_next)
 					{
-						$html .= '<span class="pagenav-next-pretext">'. $pre_text_next . '</span>';
+						$html .= '<span';
+						if ($pretext_next_class) {
+							$html .= ' class="' . $pretext_next_class . '"';
+						}
+						$html .= '>' . $pre_text_next . '</span>';
 					}
 					$html .= '<a href="'. $row->next .'" rel="prev">' . $next_title . '</a>';
 					$html .= $arrow_right . '</li>';

@@ -1,7 +1,7 @@
 Page Navigation With Titles
 ===========================
 
-Copyright (c) 2012  
+Copyright (c) 2012, 2013
 Mario Zimmermann <mail@zisoft.de>  
 http://www.zisoft.de/software/joomla/pagenavigationtitles.html  
 
@@ -17,16 +17,17 @@ Plugin Parameters
 * Turn on/off the left and right arrows (<,>)
 * Position of the navigation bar can be set to above, below or both
 * Configurable texts in front of the links
+* Configurable css class names
 
 
 HTML Markup And css Styling
 ---------------------------
 
-The navigation's HTML markup is built in the same way as the native 
-Joomla navigation and uses the same css classes so its styling should 
-work right out-of-the box with your template. The pretexts in front 
-of the links can be styled separately. The following markup and css 
-classes are used:
+The navigation's HTML markup is built in the same way as the native Joomla 
+navigation. The names of the css classes can be configured and are predefined 
+for Joomla 2.5 so its styling should work right out-of-the box with your 
+template. The pretexts in front of the links can be styled separately. The 
+following markup and css classes are used:
 
 
     <ul class="pagenav">

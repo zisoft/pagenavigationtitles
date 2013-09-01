@@ -2,12 +2,12 @@
 <extension version="1.6" type="plugin" group="content">
 	<name>plg_content_pagenavigationtitles</name>
 	<author>Mario Zimmermann</author>
-	<creationDate>January 2013</creationDate>
+	<creationDate>August 2013</creationDate>
 	<copyright>Copyright (C) 2005 - 2010 Open Source Matters. All rights reserved.</copyright>
 	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
 	<authorEmail>mail@zisoft.de</authorEmail>
 	<authorUrl>www.zisoft.de</authorUrl>
-	<version>1.5</version>
+	<version>1.6</version>
 	<description>PLG_PAGENAVIGATIONTITLES_XML_DESCRIPTION</description>
 	
 	<updateservers>
@@ -34,12 +34,20 @@
                     <option value="0">PLG_PAGENAVIGATIONTITLES_FIELD_POSITION_VALUE_ABOVE</option>
                     <option value="2">PLG_PAGENAVIGATIONTITLES_FIELD_POSITION_VALUE_ABOVEBELOW</option>
                 </field>
+
                 <field name="text_arrows" type="list" default="1" label="PLG_PAGENAVIGATIONTITLES_FIELD_ARROWS" description="PLG_PAGENAVIGATIONTITLES_FIELD_ARROWS_DESC">
                     <option value="1">PLG_PAGENAVIGATIONTITLES_FIELD_ARROWS_VALUE_YES</option>
                     <option value="0">PLG_PAGENAVIGATIONTITLES_FIELD_ARROWS_VALUE_NO</option>
                 </field>
                 <field name="pre_text_prev" type="text" default="" label="PLG_PAGENAVIGATIONTITLES_FIELD_PRETEXT_PREV" description="PLG_PAGENAVIGATIONTITLES_FIELD_PRETEXT_PREV_DESC" />
                 <field name="pre_text_next" type="text" default="" label="PLG_PAGENAVIGATIONTITLES_FIELD_PRETEXT_NEXT" description="PLG_PAGENAVIGATIONTITLES_FIELD_PRETEXT_NEXT_DESC" />
+
+                <field name="baseclass" type="text" default="pagenav" label="PLG_PAGENAVIGATIONTITLES_FIELD_BASECLASS" description="PLG_PAGENAVIGATIONTITLES_FIELD_BASECLASS_DESC" />
+                <field name="prevclass" type="text" default="pagenav-prev" label="PLG_PAGENAVIGATIONTITLES_FIELD_PREVCLASS" description="PLG_PAGENAVIGATIONTITLES_FIELD_PREVCLASS_DESC" />
+                <field name="nextclass" type="text" default="pagenav-next" label="PLG_PAGENAVIGATIONTITLES_FIELD_NEXTCLASS" description="PLG_PAGENAVIGATIONTITLES_FIELD_NEXTCLASS_DESC" />
+
+                <field name="pretextprevclass" type="text" default="pagenav-prev-pretext" label="PLG_PAGENAVIGATIONTITLES_FIELD_PRETEXTPREVCLASS" description="PLG_PAGENAVIGATIONTITLES_FIELD_PRETEXTPREVCLASS_DESC" />
+                <field name="pretextnextclass" type="text" default="pagenav-next-pretext" label="PLG_PAGENAVIGATIONTITLES_FIELD_PRETEXTNEXTCLASS" description="PLG_PAGENAVIGATIONTITLES_FIELD_PRETEXTNEXTCLASS_DESC" />                
             </fieldset>
         </fields>
     </config>
