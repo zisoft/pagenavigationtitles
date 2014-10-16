@@ -1,6 +1,6 @@
 <?php
 /**
-* @version		1.6
+* @version		1.7
 * @copyright	Copyright (C) 2011,2013 Mario Zimmermann. All rights reserved.
 * @license		GNU/GPL, see LICENSE.php
 * Joomla! is free software. This version may have been modified pursuant
@@ -27,7 +27,7 @@ class plgContentPageNavigationTitles extends JPlugin
 			return false;
 		}
 
-		if ($params->get('show_item_navigation') && ($context == 'com_content.article') && ($view == 'article'))
+		if (($context == 'com_content.article') && ($view == 'article') && $params->get('show_item_navigation'))
 		{
 			$html     = '';
 			$db       = JFactory::getDbo();

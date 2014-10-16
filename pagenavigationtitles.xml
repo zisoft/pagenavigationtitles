@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="1.6" type="plugin" group="content">
+<extension version="1.7" type="plugin" group="content">
 	<name>plg_content_pagenavigationtitles</name>
 	<author>Mario Zimmermann</author>
-	<creationDate>August 2013</creationDate>
+	<creationDate>October 2014</creationDate>
 	<copyright>Copyright (C) 2005 - 2010 Open Source Matters. All rights reserved.</copyright>
 	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
 	<authorEmail>mail@zisoft.de</authorEmail>
 	<authorUrl>www.zisoft.de</authorUrl>
-	<version>1.6</version>
+	<version>1.7</version>
 	<description>PLG_PAGENAVIGATIONTITLES_XML_DESCRIPTION</description>
 	
 	<updateservers>

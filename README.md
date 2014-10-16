@@ -1,7 +1,7 @@
 Page Navigation With Titles
 ===========================
 
-Copyright (c) 2012, 2013
+Copyright (c) 2012, 2014
 Mario Zimmermann <mail@zisoft.de>  
 http://www.zisoft.de/software/joomla/pagenavigationtitles.html  
 
@@ -56,6 +56,7 @@ css Example
     ul.pagenav {
       border-top:1px solid #606060;
       border-bottom:1px solid #606060;
+      clear: both;
     }
     ul.pagenav li.pagenav-prev { float: left; width:auto; }
     ul.pagenav li.pagenav-next { float: right; width:auto; }
