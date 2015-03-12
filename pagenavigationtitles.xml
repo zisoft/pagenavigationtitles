@@ -39,15 +39,34 @@
                     <option value="1">PLG_PAGENAVIGATIONTITLES_FIELD_ARROWS_VALUE_YES</option>
                     <option value="0">PLG_PAGENAVIGATIONTITLES_FIELD_ARROWS_VALUE_NO</option>
                 </field>
+                <field name="arrow_text_prev" type="text" default="" label="PLG_PAGENAVIGATIONTITLES_FIELD_ARROWPREV" description="PLG_PAGENAVIGATIONTITLES_FIELD_ARROWPREV_DESC" />
+                <field name="arrow_text_next" type="text" default="" label="PLG_PAGENAVIGATIONTITLES_FIELD_ARROWNEXT" description="PLG_PAGENAVIGATIONTITLES_FIELD_ARROWNEXT_DESC" />
+                <field name="text_arrow_position" type="list" default="1" label="PLG_PAGENAVIGATIONTITLES_FIELD_ARROWS_POSITION" description="PLG_PAGENAVIGATIONTITLES_FIELD_ARROWS_POSITION_DESC">
+					<option value="1">PLG_PAGENAVIGATIONTITLES_FIELD_ARROWS_POSITION_VALUE_OUTSIDE</option>
+					<option value="2">PLG_PAGENAVIGATIONTITLES_FIELD_ARROWS_POSITION_VALUE_INSIDE</option>
+					<option value="3">PLG_PAGENAVIGATIONTITLES_FIELD_ARROWS_POSITION_VALUE_BEFORE</option>
+					<option value="4">PLG_PAGENAVIGATIONTITLES_FIELD_ARROWS_POSITION_VALUE_AFTER</option>
+                </field>
+
+
+
                 <field name="pre_text_prev" type="text" default="" label="PLG_PAGENAVIGATIONTITLES_FIELD_PRETEXT_PREV" description="PLG_PAGENAVIGATIONTITLES_FIELD_PRETEXT_PREV_DESC" />
                 <field name="pre_text_next" type="text" default="" label="PLG_PAGENAVIGATIONTITLES_FIELD_PRETEXT_NEXT" description="PLG_PAGENAVIGATIONTITLES_FIELD_PRETEXT_NEXT_DESC" />
 
                 <field name="baseclass" type="text" default="pagenav" label="PLG_PAGENAVIGATIONTITLES_FIELD_BASECLASS" description="PLG_PAGENAVIGATIONTITLES_FIELD_BASECLASS_DESC" />
+
+                <field name="titleclass" type="text" default="pagenav-title" label="PLG_PAGENAVIGATIONTITLES_FIELD_TITLECLASS" description="PLG_PAGENAVIGATIONTITLES_FIELD_TITLECLASS_DESC" />
+
                 <field name="prevclass" type="text" default="pagenav-prev" label="PLG_PAGENAVIGATIONTITLES_FIELD_PREVCLASS" description="PLG_PAGENAVIGATIONTITLES_FIELD_PREVCLASS_DESC" />
                 <field name="nextclass" type="text" default="pagenav-next" label="PLG_PAGENAVIGATIONTITLES_FIELD_NEXTCLASS" description="PLG_PAGENAVIGATIONTITLES_FIELD_NEXTCLASS_DESC" />
 
                 <field name="pretextprevclass" type="text" default="pagenav-prev-pretext" label="PLG_PAGENAVIGATIONTITLES_FIELD_PRETEXTPREVCLASS" description="PLG_PAGENAVIGATIONTITLES_FIELD_PRETEXTPREVCLASS_DESC" />
-                <field name="pretextnextclass" type="text" default="pagenav-next-pretext" label="PLG_PAGENAVIGATIONTITLES_FIELD_PRETEXTNEXTCLASS" description="PLG_PAGENAVIGATIONTITLES_FIELD_PRETEXTNEXTCLASS_DESC" />                
+                <field name="pretextnextclass" type="text" default="pagenav-next-pretext" label="PLG_PAGENAVIGATIONTITLES_FIELD_PRETEXTNEXTCLASS" description="PLG_PAGENAVIGATIONTITLES_FIELD_PRETEXTNEXTCLASS_DESC" /> 
+
+                <field name="arrowtextprevclass" type="text" default="pagenav-prev-arrow" label="PLG_PAGENAVIGATIONTITLES_FIELD_ARROWTEXTPREVCLASS" description="PLG_PAGENAVIGATIONTITLES_FIELD_ARROWTEXTPREVCLASS_DESC" />
+                <field name="arrowtextnextclass" type="text" default="pagenav-next-arrow" label="PLG_PAGENAVIGATIONTITLES_FIELD_ARROWTEXTNEXTCLASS" description="PLG_PAGENAVIGATIONTITLES_FIELD_ARROWTEXTNEXTCLASS_DESC" /> 
+
+
             </fieldset>
         </fields>
     </config>

@@ -15,6 +15,7 @@ Plugin Parameters
 -----------------
 
 * Turn on/off the left and right arrows (<,>)
+* Set custom text for the left and right arrows
 * Position of the navigation bar can be set to above, below or both
 * Configurable texts in front of the links
 * Configurable css class names
@@ -32,16 +33,22 @@ following markup and css classes are used:
 
     <ul class="pagenav">
       <li class="pagenav-prev">
-        left-arrow 
-        <span class="pagenav-prev-pretext">pre-text (prev)</span>
-        <a>prev link</a>
+        <a>
+          <span class="pagenav-prev-arrow">left-arrow </span>
+          <span class="pagenav-prev-pretext">pre-text (prev)</span>
+          <span class="pagenav-title">prev link </span>
+        </a>
       </li>
       <li class="pagenav-next">
-        <span class="pagenav-next-pretext">pre-text (next)</span>
-        <a>next link</a>
-        right-arrow
+        <a>
+          <span class="pagenav-next-pretext">pre-text (next)</span>
+          <span class="pagenav-title">next link</span>
+          <span class="pagenav-next-arrow">right-arrow</span>
+        </a>
       </li>
     </ul>
+
+*NOTE* -- there are no spaces between any of the spans. If you want space use :before or :after and content property or add padding accordingly. 
 
 
 css Example

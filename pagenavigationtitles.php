@@ -174,66 +174,88 @@ class plgContentPageNavigationTitles extends JPlugin
 			$next_class         = $this->params->get('nextclass');
 			$pretext_prev_class = $this->params->get('pretextprevclass');
 			$pretext_next_class = $this->params->get('pretextnextclass');
-			
+
+			$text_arrow_prev = $this->params->get('arrow_text_prev');
+			$text_arrow_next = $this->params->get('arrow_text_next');
+			$arrowtext_prev_class = $this->params->get('arrowtextprevclass');
+			$arrowtext_next_class = $this->params->get('arrowtextnextclass');
+
+			$title_class = $this->params->get('titleclass');
+
+			$text_arrow_position = $this->params->get('text_arrow_position', 1);
+
+
+
 			$arrow_left  = '';
 			$arrow_right = '';
 			
 			if ($text_arrows)
 			{
-				$arrow_left = JText::_('JGLOBAL_LT') . $pnSpace;
-				$arrow_right = $pnSpace . JText::_('JGLOBAL_GT');
+				if ($text_arrow_prev) {
+					$arrow_left = $text_arrow_prev ;
+				} else {
+					$arrow_left = JText::_('JGLOBAL_LT');
+				}
+				if ($text_arrow_next) {
+					$arrow_right = $text_arrow_next;
+				} else {
+					$arrow_right = JText::_('JGLOBAL_GT');
+				}
+
+				
 			}
             
 			// output
 			if ($row->prev || $row->next)
-			{
-				$html = '<ul';
-				if ($base_class) {
-					$html .= ' class="' . $base_class . '"';
-				}
-				$html .= '>';
-
+			{			
 				if ($row->prev)
 				{
-					$html .= '<li';
-					if ($prev_class) {
-						$html .= ' class="' . $prev_class . '"';
+
+					$arrow = $this->wrap_text('span', $arrowtext_prev_class, $arrow_left); //arrow
+
+					$prev_markup = '<a href="'. $row->prev .'" rel="next">';
+					if ($text_arrow_position == 1 || $text_arrow_position == 3) {
+						$prev_markup .= $arrow;
 					}
-					$html .= '>' . $arrow_left;
 
 					if ($pre_text_prev)
 					{
-						$html .= '<span';
-						if ($pretext_prev_class) {
-							$html .= ' class="' . $pretext_prev_class . '"';
-						}
-						$html .= '>' . $pre_text_prev . '</span>';
+						$prev_markup .= $this->wrap_text('span', $pretext_prev_class, $pre_text_prev);
 					}
-					$html .= '<a href="'. $row->prev .'" rel="next">' . $prev_title . '</a></li>';
+					$prev_markup .= $this->wrap_text('span', $title_class, $prev_title);
+					if ($text_arrow_position == 2 || $text_arrow_position == 4) {
+						$prev_markup .= $arrow;
+					}
+					$prev_markup .= '</a>';
+					$html .= $this->wrap_text('li', $prev_class, $prev_markup);
 				}
 
 				if ($row->next)
 				{
-					$html .= '<li';
-					if ($next_class) {
-						$html .= ' class="' . $next_class . '"';
+					$arrow = $this->wrap_text('span', $arrowtext_next_class, $arrow_right); 
+
+
+					$next_markup = '<a href="'. $row->next .'" rel="next">';
+
+					if ($text_arrow_position == 2 || $text_arrow_position == 3) {
+						$next_markup .= $arrow;
 					}
-					$html .= '>';
+
 
 					if ($pre_text_next)
 					{
-						$html .= '<span';
-						if ($pretext_next_class) {
-							$html .= ' class="' . $pretext_next_class . '"';
-						}
-						$html .= '>' . $pre_text_next . '</span>';
+						$next_markup .= $this->wrap_text('span', $pretext_next_class, $pre_text_next);
 					}
-					$html .= '<a href="'. $row->next .'" rel="prev">' . $next_title . '</a>';
-					$html .= $arrow_right . '</li>';
+					$next_markup .= $this->wrap_text('span', $title_class, $next_title);
+					if ($text_arrow_position == 1 || $text_arrow_position == 4) {
+						$next_markup .= $arrow;
+					}
+										
+					$next_markup .= '</a>';
+					$html .= $this->wrap_text('li', $next_class, $next_markup);
 				}
-				$html .= '
-				</ul>'
-				;
+
+				$html = $this->wrap_text('ul', $base_class, $html);
 				
 				if ($position == 0 || $position == 2) {
 					// display before content
@@ -247,4 +269,14 @@ class plgContentPageNavigationTitles extends JPlugin
 			}
 		}
 	}
+
+	public function wrap_text($tagname = 'div', $class='', $content=''){
+		$wrap = '<' . $tagname;
+		if (!empty($class)) {
+			$wrap .= ' class="'. $class . '"';
+		}
+		$wrap .= '>' .$content . '</'.$tagname.'>';
+		return $wrap;
+	}
+
 }
